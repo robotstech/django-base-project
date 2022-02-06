@@ -130,10 +130,10 @@ AWS_DEFAULT_ACL = 'public-read'
 STATIC_LOCATION = f'{ENVIRONMENT.value}/{SERVICE_NAME}/static'
 STATIC_URL = f'{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 STATIC_ROOT = Path.joinpath(BASE_DIR, '/static/')
-STATICFILES_STORAGE = 'accounts_backend.storage_backends.StaticStorage'
+STATICFILES_STORAGE = 'base.storage_backends.StaticStorage'
 
 PRIVATE_MEDIA_LOCATION = f'{ENVIRONMENT.value}/{SERVICE_NAME}/media/private'
 PUBLIC_MEDIA_LOCATION = f'{ENVIRONMENT.value}/{SERVICE_NAME}/media/public'
 MEDIA_URL = f'{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-DEFAULT_FILE_STORAGE = 'accounts_backend.storage_backends.PublicMediaStorage'
-PRIVATE_FILE_STORAGE = 'accounts_backend.storage_backends.PrivateMediaStorage'
+DEFAULT_FILE_STORAGE = 'base.storage_backends.PublicMediaStorage'
+PRIVATE_FILE_STORAGE = 'base.storage_backends.PrivateMediaStorage'

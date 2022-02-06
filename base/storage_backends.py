@@ -1,5 +1,5 @@
 from storages.backends.s3boto3 import S3Boto3Storage
-from accounts_backend.settings import PUBLIC_MEDIA_LOCATION, PRIVATE_MEDIA_LOCATION, STATIC_LOCATION
+from base.settings import PUBLIC_MEDIA_LOCATION, PRIVATE_MEDIA_LOCATION, STATIC_LOCATION
 
 
 class StaticStorage(S3Boto3Storage):
