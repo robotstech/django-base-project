@@ -1,4 +1,3 @@
-
 # automated tests
 pytest-django==4.2.0
 pytest==6.2.3
