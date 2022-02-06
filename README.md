@@ -45,3 +45,9 @@ You can find out the path to your `python3` interpreter with the command `which 
     ```shell script
     pytest
     ```
+
+## Development
+1. launch app with docker compose
+   ```shell
+   docker-compose up --build --remove-orphans
+   ```

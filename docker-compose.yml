@@ -23,7 +23,7 @@ services:
       - .env
     environment:
       - PYTHONUNBUFFERED=1
-      - DATABASE_URL=postgresql://postgres:postgres@localhost:5432/base
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/postgres
     volumes:
       - static_files:/staticfiles
     ports:
@@ -31,11 +31,3 @@ services:
     command: pytest && gunicorn -w 4 --threads 50 base.wsgi -b 0.0.0.0:8000
     depends_on:
       - postgres
-  nginx:
-    build:
-      context: .
-      dockerfile: docker/nginx/Dockerfile
-    volumes:
-      - static_files:/static
-    ports:
-      - "80:80"
