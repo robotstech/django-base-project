@@ -137,3 +137,9 @@ PUBLIC_MEDIA_LOCATION = f'{ENVIRONMENT.value}/{SERVICE_NAME}/media/public'
 MEDIA_URL = f'{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 DEFAULT_FILE_STORAGE = 'base.storage_backends.PublicMediaStorage'
 PRIVATE_FILE_STORAGE = 'base.storage_backends.PrivateMediaStorage'
+
+if ENVIRONMENT not in [Environment.LOCAL, Environment.CI]:
+    SESSION_COOKIE_SAMESITE = 'None'
+    CSRF_COOKIE_SAMESITE = 'None'
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
