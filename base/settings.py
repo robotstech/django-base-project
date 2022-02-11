@@ -30,11 +30,13 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
+HOST = config("HOST")
+
 # the allowed servers
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [HOST]
 
 # the allowed servers for debugging
-INTERNAL_IPS = ["127.0.0.1", "localhost"]
+INTERNAL_IPS = [HOST] if ENVIRONMENT in {Environment.LOCAL, Environment.DEV} else []
 
 # Application definition
 INSTALLED_APPS = [
